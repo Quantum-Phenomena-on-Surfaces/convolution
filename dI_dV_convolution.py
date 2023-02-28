@@ -37,7 +37,7 @@ bias = V*27211.6
 sigma = 2.7E-6
 
 '''load data'''
-data = np.loadtxt('data/SC_pb_tip', skiprows = 1)
+#data = np.loadtxt('SC_pb_tip', skiprows = 1)
 
 ########convoluted dI/dV
 (dIdV, dIdV_gauss) = cv.convolution(V, Delta_tip, Delta_subs, Dynes, T_tip, T_sub, N_subs, N_tip, N, tip, sigma)
@@ -49,7 +49,7 @@ if (tip == 'SC'):
     plt.plot(bias, dIdV, color='C0', label = 'dI/dV')
     plt.plot(bias, dIdV_gauss*factor, color='C1', label = 'Gaussian noise')
     
-    plt.plot(data[:,0]*1.0E+3, data[:,1]*factor_data, '.', color = 'C2', label = 'data')
+    #plt.plot(data[:,0]*1.0E+3, data[:,1]*factor_data, '.', color = 'C2', label = 'data')
     
     plt.xlim([-5, 5])
     plt.xlabel('Bias (mV)')
