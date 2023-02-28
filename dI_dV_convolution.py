@@ -16,7 +16,7 @@ plt.rcParams['figure.figsize'] = [20, 6]
 
 
 '''Parameters'''
-tip = 'SC'####SC of Metal
+tip = 'SC'####SC or Metal
 Delta_tip = 1.0
 Delta_subs = 2.0
 Dynes = 0.05
@@ -42,7 +42,7 @@ sigma = 2.7E-6
 ########convoluted dI/dV
 (dIdV, dIdV_gauss) = cv.convolution(V, Delta_tip, Delta_subs, Dynes, T_tip, T_sub, N_subs, N_tip, N, tip, sigma)
 factor = np.average(dIdV)/np.average(dIdV_gauss)
-factor_data = np.average(dIdV)/np.average(data[:,1])
+#factor_data = np.average(dIdV)/np.average(data[:,1])
 
 
 if (tip == 'SC'):
